@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hello Handlebars</title>
+		<style type="text/css">
+			.reText {color: red;}
+			.blueText {color: blue;}
+			.greenText {color: green;}
+ 		</style>
+		<script type="text/javascript" src="handlebars-v4.0.10.js"></script>
+	</head>
+	<body>
+		<div id="quoteData"></div>
+
+			<script id="quote-template" type="text/x-handlebars-template">
+
+			<h3>Favorite {{name}} Quotes</h3>	<h3>Favorite {{{yogiBio}}} Quotes</h3>
+			<ol>
+			{{#each quotes}}
+			<li>{{qoute}}
+			{{/each}}
+			</ol>
+
+			</script>
+
+			<script type="text/javascript">
+
+				var qouteInfo = document.getElementById("quote-template").innerHTML;
+
+				var template = Handlebars.compile(qouteInfo);
+
+				var quoteData = template({
+					name:  "Yogi Bear",
+					quotes: [
+						{quote: "If you don't know wher you are going, you might wind up someplace else."},
+						{quote: "Your better cut pizza."},
+						{quote: "I never said the most of the things I said."},
+						{quote: "Nobody  goes there anymore because it's too crowded."}
+					],
+
+					yogiBio: "<i>assasasasasssdasjdhusahd</i>";
+				});
+		
+				document.getElementById("quoteData").innerHTML += quoteData;
+
+
+
+			</script>
+ 	</body>
+</html>

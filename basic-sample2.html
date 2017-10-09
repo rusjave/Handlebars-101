@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Handlebars Demo</title>
+	
+</head>
+<body>
+	<div id="render_here">
+		first place holder
+	</div>
+	<div id="render_here_again">
+		second place holder
+	</div>
+
+	<script id="first-template" type="text/-handlebars-template">
+		<div>
+			<h1 style="color:green">{{title}}</h1>
+			<h2 style="color: red">{{{body}}}</h2>
+		</div>
+	</script>
+
+	<div class="post">
+		<h2>By {{fullName author}} - {{body}}</h2>
+		<h1 style="color: blue">Comments</h1>
+
+		<ul>
+			{{#each comments}}
+				<li>By {{fullName author}} - {{body}} </li>
+			{{/each}}
+		</ul>
+
+	</div>
+
+	<div id="selections">
+		{{#each headers}}
+			<input type="checkbox" id="{{id}}">
+			<label for={{id}}> {{item}} </label>
+		{{/each}}
+	</div>
+
+	<script type="text/javascript" src="handlebars-v4.0.10.js"></script>
+	<script
+			  src="https://code.jquery.com/jquery-3.2.1.js"
+			  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+			  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
