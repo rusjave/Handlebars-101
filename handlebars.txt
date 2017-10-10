@@ -1,0 +1,44 @@
+- handlebars expression
+{{}}
+
+- Triple-stash (no escaping)
+{{{}}}
+
+- Comments
+{{!-- --}}
+{{!}}
+
+- Hepers and block helpers
+
+Built-In Helpers 
+
+The if block helper 
+	<div class="entry">
+	  {{#if author}}
+	    <h1>{{firstName}} {{lastName}}</h1>
+	  {{/if}}
+	</div>
+
+
+The unless block helper 
+	<div class="entry">
+	  {{#unless license}}
+	  <h3 class="warning">WARNING: This entry does not have a license!</h3>
+	  {{/unless}}
+	</div>
+
+The each block helper
+
+	<ul class="people_list">
+	  {{#each people}}
+	    <li>{{this}}</li>
+	  {{/each}}
+	</ul>
+
+{
+	people: [
+	"Yehuda Katz",
+	"Alan Johnson",
+	"Charles Jolley"
+	]
+}

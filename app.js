@@ -1,11 +1,11 @@
 $(document).ready(function(){
-	var source = $("#first-template").html();
-	var template = Handlebars.compile(source);
-	var context = {
+	var source = $("#first-template").html(); // get the html source via id Ex. #first-template
+	var template = Handlebars.compile(source); // then compiled it on Handlebars
+	var context = {                                         /*
 		title: "All about Handlebars",
-		body: "<p>This is apost about &lt;p&gt; tags</p>",
+		body: "<p>This is apost about &lt;p&gt; tags</p>",  */ 
 	}
-	var el_html = template(context);  console.log(context);
+	var el_html = template(context);  
 
 	$("#render_here").html(el_html);
 	$("#render_here_again").html(el_html);
@@ -13,6 +13,7 @@ $(document).ready(function(){
 var source = $('.post').html();
 var template = Handlebars.compile(source);
 
+////////////////////////////////////
 var context = {
 	author: {
 		firstName : "Luffy",
@@ -41,7 +42,7 @@ var context = {
 	var html = template(context);
 
 	$(".post").html(html);
-
+///////////////////////////////////////////
 
 	var ctx = {
 		headers: [{
